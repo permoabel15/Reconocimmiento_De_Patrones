@@ -1,0 +1,15 @@
+Edad,Ingreso,Estudiante,Credito,Clase
+1,alto,no,suficiente,no
+1,alto,no,excelente,no
+2,alto,no,suficiente,si
+3,medio,no,suficiente,si
+3,bajo,si,suficiente,si
+3,bajo,si,excelente,no
+2,bajo,si,excelente,si
+1,medio,no,suficiente,no
+1,bajo,si,suficiente,si
+3,medio,si,suficiente,si
+1,medio,si,excelente,si
+2,medio,no,excelente,si
+2,alto,si,suficiente,si
+3,medio,no,excelente,no
