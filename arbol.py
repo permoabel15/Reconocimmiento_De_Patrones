@@ -11,9 +11,10 @@ from sklearn import metrics  # metricas
 import csv
 from sklearn.decomposition import PCA
 
-iris = pd.read_csv('muestrasIrisPCAROSA.csv')
+iris = pd.read_csv('csv/wdbcEntrenamiento.csv')
 print(iris)
-features = ['A1','A2']
+features = ['A1', 'A2', 'A3', 'A4', 'A5', 'A6', 'A7', 'A8', 'A9', 'A10', 'A11', 'A12', 'A13', 'A24', 'A15', 'A16',
+            'A17', 'A18', 'A19', 'A20', 'A21', 'A22', 'A23', 'A24', 'A25', 'A26', 'A27', 'A28', 'A29', 'A30']
 target = ['Clase']
 
 
@@ -63,14 +64,14 @@ for x in features:
     print(r)
 """
 dtree = DecisionTreeClassifier()
-dtree = dtree.fit(iris[features], iris.iloc[:,4])
+dtree = dtree.fit(iris[features], iris.iloc[:,30])
 
-irisP = pd.read_csv('pruebaIrisPCA.csv')
+irisP = pd.read_csv('csv/wdbcPrueba.csv')
 prediction = dtree.predict(irisP[features])
-confusion_matrix = metrics.confusion_matrix(irisP.iloc[:,4], prediction)
+confusion_matrix = metrics.confusion_matrix(irisP.iloc[:,30], prediction)
 
 print(confusion_matrix)
 
 fig, axes = plt.subplots(nrows = 1,ncols = 1,figsize = (4,4), dpi=300)
 tree.plot_tree(dtree, feature_names=features)
-fig.savefig('imagename1.png')
+fig.savefig('image/wdbc.png')
