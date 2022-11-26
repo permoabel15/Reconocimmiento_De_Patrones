@@ -1,8 +1,4 @@
 import pandas as pd
-import numpy
-from scipy import stats
-import matplotlib.pyplot as plt
-from sklearn.preprocessing import KBinsDiscretizer
 from sklearn.naive_bayes import GaussianNB #bayes
 from sklearn import metrics #metricas
 
