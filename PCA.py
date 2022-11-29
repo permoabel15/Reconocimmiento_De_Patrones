@@ -5,7 +5,7 @@ from sklearn.decomposition import PCA
 import csv
 
 iris = pd.read_csv('csv/wdbcEntrenamiento.csv')
-print(iris)
+#print(iris)
 features = ['A1', 'A2', 'A3', 'A4', 'A5', 'A6', 'A7', 'A8', 'A9', 'A10', 'A11', 'A12', 'A13', 'A24', 'A15', 'A16',
             'A17', 'A18', 'A19', 'A20', 'A21', 'A22', 'A23', 'A24', 'A25', 'A26', 'A27', 'A28', 'A29', 'A30']
 target = ['Clase']
@@ -21,15 +21,20 @@ X_r = pca.fit(X).transform(X)
 
 
 # Porcentaje de varianza explicado por cada componente
-print(
-    "Explicación de cada componente: %s"
-    % str(pca.explained_variance_ratio_)
-)
+#print(
+#    "Explicación de cada componente: %s"
+#    % str(pca.explained_variance_ratio_)
+#)
+for i in range(len(pca.explained_variance_ratio_)):
+    print("{:.20f}".format(pca.explained_variance_ratio_[i]))
 
+
+"""
 with open('wdbcEntrenamientoPCA.csv', 'w', newline='', encoding='utf-8') as csvfile:
     writer = csv.writer(csvfile)
     writer.writerows(X_r)
-"""
+    
+
 i1 = iris.loc[:, 'Clase'] == 'M'
 i2 = iris.loc[i1]
 i3 = iris.loc[:, 'Clase'] == 'B'
